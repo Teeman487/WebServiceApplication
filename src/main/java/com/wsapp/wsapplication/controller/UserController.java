@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.controller;
 
 import com.wsapp.wsapplication.exception.UserServiceException;
@@ -33,11 +34,12 @@ public class UserController {
         return "http GET USERS was called on PageNo: "+pageNo+ " with LimitNo: "+limitNo+" and sort: "+sort;
     }
 
-    /*@GetMapping    // Getting All users on a Page -- http://localhost:8080/users
+@GetMapping    // Getting All users on a Page -- http://localhost:8080/users
     public String getUsers()
     {
         return "http GET All USERS was called";
-    }*/
+    }
+
 
 
     //  Returning Object as JSON or XML Representation   // Getting specific {userID} on a Page -- http://localhost:8080/users/{userID}
@@ -78,7 +80,7 @@ public class UserController {
 
         // Cut out the Entire business logic  // Dependency injection with UserServiceImpl
         //UserRest userRestVal = new UserServiceImpl().createUser(userDetails);  // UserServiceImpl now contains the buss logic
-        UserRest userRestVal = userService.createUser(userDetails);
+        UserRest userRestVal = userService.createUser(userDetails); // loosely coupling
         return new ResponseEntity<UserRest>(userRestVal, HttpStatus.OK);
 
     }
@@ -109,3 +111,4 @@ public class UserController {
 
     }
 }
+*/

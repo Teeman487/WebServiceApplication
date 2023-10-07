@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.service;
 
 import com.wsapp.wsapplication.model.UserDetailsRequestModel;
@@ -9,3 +10,4 @@ import org.springframework.stereotype.Service;
 public interface UserService {
     UserRest createUser(UserDetailsRequestModel userDetails);  //Extracted from Postapping
 }
+*/

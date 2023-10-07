@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.model;
 
 import jakarta.validation.constraints.Email;
@@ -51,3 +52,4 @@ public class UserDetailsRequestModel {
     }
 
 }
+*/

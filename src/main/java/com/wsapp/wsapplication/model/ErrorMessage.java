@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.model;
 
 import java.util.Date;
@@ -32,3 +33,4 @@ public class ErrorMessage { // Return Custom Error Message
         this.message = message;
     }
 }
+*/

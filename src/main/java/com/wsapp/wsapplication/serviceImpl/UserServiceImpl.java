@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.serviceImpl;
 
 import com.wsapp.wsapplication.model.UserDetailsRequestModel;
@@ -40,3 +41,4 @@ public class UserServiceImpl implements UserService {
         return userRestVal;
     }
 }
+*/

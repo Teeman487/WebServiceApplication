@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.model;
 
 public class UserRest {
@@ -39,3 +40,4 @@ public class UserRest {
     }
 
 }
+*/

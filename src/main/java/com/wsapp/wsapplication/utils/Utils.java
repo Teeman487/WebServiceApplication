@@ -1,3 +1,4 @@
+/*
 package com.wsapp.wsapplication.utils;
 
 import org.springframework.stereotype.Service;
@@ -10,4 +11,4 @@ public class Utils {
     {
         return UUID.randomUUID().toString(); // Debug   // Construction Based Dependency Injection
     }
-}
+}*/
