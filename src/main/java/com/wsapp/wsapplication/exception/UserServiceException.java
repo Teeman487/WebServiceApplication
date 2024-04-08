@@ -1,4 +1,3 @@
-/*
 package com.wsapp.wsapplication.exception;
 
 import java.io.Serial;
@@ -12,4 +11,3 @@ public class UserServiceException extends RuntimeException {  // Throw & Handle 
     }
 
 }
-*/

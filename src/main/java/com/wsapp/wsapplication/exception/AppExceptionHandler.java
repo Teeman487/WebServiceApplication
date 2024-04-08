@@ -1,4 +1,3 @@
-/*
 package com.wsapp.wsapplication.exception;
 
 import com.wsapp.wsapplication.model.ErrorMessage;
@@ -22,34 +21,30 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
 
         return  new ResponseEntity<>(  // place debug point
                 errorMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);  // returning errorMessage containing Date and localized message associated with exception in UserController
-    }     */
-/*{ "timestamp": "2023-10-04T16:19:40.635+00:00", "message": "Cannot invoke \"String.length()\" because \"firstName\" is null"}*//*
-
+    }
 
     // Handling a Specific NullPointer Custom Error Exception
-    */
-/*@ExceptionHandler(value = {NullPointerException.class})
-    public ResponseEntity<Object>handNullPointerException(NullPointerException ex, WebRequest request) {
-        String errorMessageDescription = ex.getLocalizedMessage();  // Debug point
-        if(errorMessageDescription ==null) errorMessageDescription =ex.toString();
-
-        ErrorMessage errorMessage= new ErrorMessage(new Date(), errorMessageDescription);
-        return  new ResponseEntity<>(  // place debug point
-                errorMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }*//*
+//@ExceptionHandler(value = {NullPointerException.class})
+//    public ResponseEntity<Object>handNullPointerException(NullPointerException ex, WebRequest request) {
+//        String errorMessageDescription = ex.getLocalizedMessage();  // Debug point
+//        if(errorMessageDescription ==null) errorMessageDescription =ex.toString();
+//
+//        ErrorMessage errorMessage= new ErrorMessage(new Date(), errorMessageDescription);
+//        return  new ResponseEntity<>(  // place debug point
+//                errorMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+//    }
 
 
     // Throw and Handle your own  Custom Exception
-    */
-/*@ExceptionHandler(value = {UserServiceException.class})  // Throw Exception
-    public ResponseEntity<Object>handleUserServiceException(UserServiceException ex, WebRequest request) {
-        String errorMessageDescription = ex.getLocalizedMessage();  // Debug point
-        if(errorMessageDescription ==null) errorMessageDescription =ex.toString();
-
-        ErrorMessage errorMessage= new ErrorMessage(new Date(), errorMessageDescription);
-        return  new ResponseEntity<>(  // place debug point
-                errorMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }*//*
+//@ExceptionHandler(value = {UserServiceException.class})  // Throw Exception
+//    public ResponseEntity<Object>handleUserServiceException(UserServiceException ex, WebRequest request) {
+//        String errorMessageDescription = ex.getLocalizedMessage();  // Debug point
+//        if(errorMessageDescription ==null) errorMessageDescription =ex.toString();
+//
+//        ErrorMessage errorMessage= new ErrorMessage(new Date(), errorMessageDescription);
+//        return  new ResponseEntity<>(  // place debug point
+//                errorMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+//    }
 
 
     @ExceptionHandler(value = {NullPointerException.class, UserServiceException.class})  // Catch More than One Exception with One Method
@@ -62,4 +57,3 @@ public class AppExceptionHandler extends ResponseEntityExceptionHandler {
                 errorMessage, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR); }
 
 }
-*/

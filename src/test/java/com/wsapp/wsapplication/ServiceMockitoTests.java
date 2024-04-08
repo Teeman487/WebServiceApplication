@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 @SpringBootTest(classes = {ServiceMockitoTests.class})
 public class ServiceMockitoTests {
     @Mock
-    CountryRepository countryrep;
+    CountryRepository countryRepository;
     @InjectMocks
     CountryService countryService;
 
@@ -30,10 +30,10 @@ public class ServiceMockitoTests {
     @Order(1)
     public void test_getAllCountries()
     {
-        List<Country>mycountries=new ArrayList<Country>();
-        mycountries.add(new Country(1,"India","Delhi"));
-        mycountries.add(new Country(2,"USA","Washington"));
-        when(countryrep.findAll()).thenReturn(mycountries); // Mocking
+        List<Country>myCountries=new ArrayList<Country>();
+        myCountries.add(new Country(1,"India","Delhi"));
+        myCountries.add(new Country(2,"USA","Washington"));
+        when(countryRepository.findAll()).thenReturn(myCountries); // Mocking
         assertEquals(2,countryService.getAllCountries().size());
     }
 
@@ -41,24 +41,23 @@ public class ServiceMockitoTests {
     @Order(2)
     public void test_getCountryByID()
     {
-        List<Country>mycountries=new ArrayList<Country>();
-        mycountries.add(new Country(1,"India","Delhi"));
-        mycountries.add(new Country(2,"USA","Washington"));
+        List<Country>myCountries=new ArrayList<Country>();
+        myCountries.add(new Country(1,"India","Delhi"));
+        myCountries.add(new Country(2,"USA","Washington"));
         int countryID=1;
-        when(countryrep.findAll()).thenReturn(mycountries); // Mocking
+        when(countryRepository.findAll()).thenReturn(myCountries); // Mocking
         assertEquals(countryID,countryService.getCountryByID(countryID).getId());
 
     }
     @Test
     @Order(3)
-
-    public void test_getCountrybyName()
+    public void test_getCountryByName()
     {
-        List<Country>mycountries=new ArrayList<Country>();
-        mycountries.add(new Country(1,"India","Delhi"));
-        mycountries.add(new Country(2,"USA","Washington"));
+        List<Country>myCountries=new ArrayList<Country>();
+        myCountries.add(new Country(1,"India","Delhi"));
+        myCountries.add(new Country(2,"USA","Washington"));
         String countryName="India";
-        when(countryrep.findAll()).thenReturn(mycountries); // Mocking
+        when(countryRepository.findAll()).thenReturn(myCountries); // Mocking
         assertEquals(countryName,countryService.getCountryByName(countryName).getCountryName());
 
     }
@@ -68,7 +67,7 @@ public class ServiceMockitoTests {
     {
         Country country=new Country(3,"Germany","Berlin");
 
-        when(countryrep.save(country)).thenReturn(country);
+        when(countryRepository.save(country)).thenReturn(country);
         assertEquals(country, countryService.addCountry(country));
     }
     @Test
@@ -77,7 +76,7 @@ public class ServiceMockitoTests {
     {
         Country country=new Country(3,"Ghana","Accra");
 
-        when(countryrep.save(country)).thenReturn(country);// used when the method is returning
+        when(countryRepository.save(country)).thenReturn(country);// used when the method is returning
         assertEquals(country, countryService.updateCountry(country));
     }
 
@@ -88,6 +87,6 @@ public class ServiceMockitoTests {
         Country country=new Country(3,"Ghana","Accra");
 
         countryService.deleteCountry(country);
-        verify(countryrep,times(1)).delete(country); // Mocking
+        verify(countryRepository,times(1)).delete(country); // Mocking
     }
 }
